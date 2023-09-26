@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;jdbc.dao.impl.MemberDAOImpl.deleteMember(...).conn&apos; in &apos;jdbc.dao.impl.MemberDAOImpl.deleteMember(...)&apos; to field&#x0D;&#x0A;- Original project: &apos;ws01_jdbc_t&apos;&#x0D;&#x0A;- Original element: &apos;jdbc.dao.impl.MemberDAOImpl.deleteMember(...).conn&apos;&#x0D;&#x0A;- Field name: &apos;conn&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;conn&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;jdbc.dao.impl{MemberDAOImpl.java" name="conn" selection="2318 11" stamp="1680571939521" static="false" version="1.0" visibility="2"/>
+</session>

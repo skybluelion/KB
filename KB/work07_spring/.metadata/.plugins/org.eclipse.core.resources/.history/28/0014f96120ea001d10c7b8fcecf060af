@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="sql.pms.mapper">
+	<!-- 폰 등록하기 -->
+	<insert id="insert">
+		
+	</insert>
+	
+	<!-- 폰 조회하기 :: where num = #{VALUE}
+		num, model, price, vcode - JOIN 사용안하면 Cartesian Product 
+		모든 폰 조회하기 - selectList()
+		특정 폰 조회하기 - selectOne()
+	 -->
+	<select id="select">
+	
+	</select>
+</mapper>

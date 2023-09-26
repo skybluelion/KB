@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+<!-- Target -->
+<bean id="member" class="spring.aop.solv.MemberService"/>
+<bean id="product" class="spring.aop.solv.ProductService"/>
+
+<!-- Advice -->
+<bean id="logging" class="spring.aop.solv.LoggingAdvice"/>
+
+<!-- 
+aopConfig
+Advice의 어떤 메소드가
+Target의 어떤 메소드로 위빙되는지를 
+디테일하게 작성
+JoinPoint : 어드바이스가 적용되는 위치
+PointCut : JoinPoint의 상세한 스펙을 정의
+ -->
+
+<aop:config>
+	<aop:aspect id="loggingAspect" ref="logging">
+		<aop:pointcut expression="execution(* spring.aop..*(..))" id="pc"/>
+		<aop:around method="logPush" pointcut-ref="pc"/>
+	</aop:aspect>
+</aop:config>
+
+</beans>

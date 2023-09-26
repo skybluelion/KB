@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Register Member Form</h2>
+	<form action="#" id="registerfrm">
+	NAME <input type="text" name="userName" required="required"> <br><br>
+	ID <input type="text" name="userId" required="required"> <br><br>
+	PASSWORD <input type="password" name="userPass" value="kblife" readonly="readonly"> <br><br>
+	GENDER <input type="radio" name="gender" value="F">여자
+	GENDER <input type="radio" name="gender" value="M">남자 <br><br>
+	<hr>
+	Introduction<br>
+	<textarea rows="5" cols="50">
+	자기소개
+	</textarea><br><br>
+	<hr>
+	<b>오늘 점심메뉴를 고르세요.</b><br>
+	<select>
+		<option>김치찌개</option>
+		<option>김밥</option>
+		<option>돈까스</option>
+		<option>매운탕</option>
+	</select>
+	</form>
+</body>
+</html>

@@ -1,0 +1,3 @@
+1683165122661	Move 2 resources to 'config'
+1683165200992	Rename resource 'jdbc.properties'
+1683165374578	Rename resource 'mybatis-memberservice-mapping.xml'

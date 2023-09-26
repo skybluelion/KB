@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var myName = "Peter"; // 전역변수
+	
+	function showInfo() {
+		myAge = 22; // 전역변수
+		console.info(myAge); // 22
+		//es6, ECMA 2015 ... let(로컬 변수 앞에 지정)
+	}
+
+	showInfo();
+	console.info(myAge); // method block 밖에서 사용해도 호출이 가능
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

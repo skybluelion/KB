@@ -1,0 +1,45 @@
+package com.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+/*
+ DB 연결한 후 데이터를 추가, 삭제, 수정, 반환하는 작업을 하기 위해서는
+ 1. 드라이버를 메모리(DBConnectTest1.java가 실행되는 메모리)에 로딩
+ 	Class.forName("드라이버명")
+ 2. DB 연결
+ 
+ 3. CRUD 작업
+ */
+public class DBConnectTest1 {
+
+	public static void main(String[] args) {
+		try {
+			//1. 드라이버 로딩
+			Class.forName("oracle.jdbc.driver.OracleDriver"); 
+			// FQCN : Fully Qualified Name 클래스가 속한 패키지명을 모두 포함한 이름
+			// 머신이 이름을 인식하기 위해 full name
+			System.out.println("1. Driver Loading...Success");
+			
+			//2. DB연결  ... 1) DB 서버 주소 2) 계정 3) 비번
+			Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "kb_db","1234");
+										//  protocol:driver@machineIP:port:orcle)
+			System.out.println("2. DB Connect... Success");
+			
+			//3. CRUD 작업 ... DB 서버와 연결이 이뤄져야만 가능...
+			String query = "INSERT INTO custom(id, name, address) VALUES(?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(query);
+			
+			
+		} catch (ClassNotFoundException e) {
+//			e.printStackTrace(); // 자취를 쫓아가면서 추적해주기 때문에 유용하지만, 보안 문제 때문에 현재는 잘 쓰이지 않음
+			System.out.println("1. Driver Loading... Fail...");
+		} catch (SQLException e) {
+			System.out.println("2. DB Connect... Fail...");
+		} 
+		
+	}
+
+}

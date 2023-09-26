@@ -1,0 +1,192 @@
+package jdbc.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import config.ServerInfo;
+import jdbc.dao.MemberDAO;
+import jdbc.dto.Member;
+import jdbc.exception.DuplicateIDException;
+import jdbc.exception.RecordNotFoundException;
+
+public class MemberDAOImpl implements MemberDAO{
+
+	//싱글톤
+	private static MemberDAOImpl dao = new MemberDAOImpl();
+	private MemberDAOImpl() {}
+	public static MemberDAOImpl getInstance() {
+		return dao;
+	}
+	
+	@Override
+	public Connection getConnect() throws SQLException {
+		Connection conn = DriverManager.getConnection(ServerInfo.URL,ServerInfo.USER,ServerInfo.PASS);
+		System.out.println("DB...Connection...is OK");
+		return conn;
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps) throws SQLException {
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException {
+		if(rs!=null) rs.close();
+		closeAll(conn, ps);
+	}
+
+	private boolean idExist(int id, Connection conn) throws SQLException {
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT id FROM member WHERE id=?";
+		ps = conn.prepareStatement(query);
+		ps.setInt(1, id);
+		rs = ps.executeQuery();
+		return rs.next();
+	}
+	
+	@Override
+	public void insertMember(Member vo) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = getConnect();
+			String query = "INSERT INTO member(id, name, email, phone) VALUES(seq_id.nextval,?,?,?)";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, vo.getName());
+			ps.setString(2, vo.getEmail());
+			ps.setString(3, vo.getPhone());
+			System.out.println(ps.executeUpdate()+"row INSERT is OK.");
+		} finally {
+			closeAll(conn,ps);
+		}
+	}
+
+	@Override
+	public void deleteMember(int id) throws SQLException, RecordNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = getConnect();
+			if(idExist(id,conn)) {
+				String query = "DELETE member WHERE id=?";
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, id);
+				System.out.println(ps.executeUpdate()+"row DELETE is OK.");
+			}else {
+				throw new RecordNotFoundException("삭제할 고객이 존재하지 않습니다.");
+			}
+		} finally {
+			closeAll(conn, ps);
+		}
+	}
+
+	@Override
+	public void updateMember(Member vo) throws SQLException, RecordNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = getConnect();
+			if(idExist(vo.getId(),conn)) {
+				String query = "UPDATE member SET name=?, email=?, phone=? WHERE id=?";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, vo.getName());
+				ps.setString(2, vo.getEmail());
+				ps.setString(3, vo.getPhone());
+				ps.setInt(4, vo.getId());
+				int row = ps.executeUpdate();
+				System.out.println(row+"row UPDATE is OK.");
+			}else {
+				throw new RecordNotFoundException("업데이트할 고객이 존재하지 않습니다.");
+			}
+		} finally {
+			closeAll(conn, ps);
+		}
+	}
+
+	@Override
+	public Member getMember(int id) throws SQLException, RecordNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Member member = null;
+		try {
+			conn = getConnect();
+			if(idExist(id,conn)) {
+				String query = "SELECT id, name, email, phone FROM member WHERE id=?";
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, id);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					member = new Member(id,
+										rs.getString(2),
+										rs.getString(3),
+										rs.getString(4));
+				}
+			} else {
+				throw new RecordNotFoundException("찾으시는 고객님의 정보가 존재하지 않습니다.");
+			}
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+		return member;
+	}
+
+	@Override
+	public ArrayList<Member> getMember() throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<Member> members = new ArrayList<>();
+		try {
+			conn = getConnect();
+			String query = "SELECT id, name, email, phone FROM member";
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				members.add(new Member(rs.getInt(1),
+										rs.getString(2),
+										rs.getString(3),
+										rs.getString(4)));
+			}
+			
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+		return members;
+	}
+
+	@Override
+	public ArrayList<Member> getMember(String name) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<Member> members = new ArrayList<>();
+		try {
+			conn = getConnect();
+			
+			String query = "SELECT id, name, email, phone FROM member WHERE name=?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				members.add(new Member(rs.getInt(1),
+										rs.getString(2),
+										rs.getString(3),
+										rs.getString(4)));
+			}
+			
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+		return members;
+	}
+
+}

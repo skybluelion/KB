@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2> Adult Movie 19 </h2>
+<form>
+	나이 <input type="number" name="age">
+	<button type="button" onclick="checkAge()">나이 확인</button>
+</form>
+
+</body>
+</html>

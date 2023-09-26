@@ -1,0 +1,14 @@
+package com.service.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class FileUploadController {
+	//FileUpload 코드 작성시 ... Controller 작성하기 이전에 반드시 먼저 작성해야하는 VO가 있다.
+	@RequestMapping("fileupload.do")
+	public String fileupload() throws Exception{
+		
+		
+	}
+}

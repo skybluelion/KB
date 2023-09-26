@@ -1,0 +1,17 @@
+footer {
+  /* 직접 작성합니다. */
+
+  background: #D8D8D8;
+  border-top: 1px solid #D8D8D8;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+footer ul{
+  list-style-type: none;
+}
+footer ul li{
+  /* 직접 작성합니다. */
+    margin: 5px;
+    text-align: right;
+}

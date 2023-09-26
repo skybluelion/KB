@@ -1,0 +1,5 @@
+
+5월 02, 2023 19:45:19.12 NEW SESSION
+5월 02, 2023 19:45:19.12 [7996:7988:0502/194519.120:ERROR:device_event_log_impl.cc(222)] [19:45:19.119] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+5월 02, 2023 19:45:19.78 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+5월 02, 2023 19:45:40.20 [7996:5892:0502/194540.202:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -118

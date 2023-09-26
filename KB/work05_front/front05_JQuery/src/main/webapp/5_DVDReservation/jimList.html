@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+<style type="text/css">
+	.poster{
+		width: 100px;
+		height: 150px;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {	
+	refreshPage();
+	//content 영역의 삭제버튼을 클릭하면 localStorage에 있는 데이터가 삭제...
+	$('#content').on('click','#delCart',deleteCart);
+	
+});
+function refreshPage(){
+	var html="";
+	var totalPrice=0; // int
+	
+	//localStorage에 담겨진 내용을 여기서 받아와서 출력
+	for(var key in localStorage){
+		if(key=='length') break;
+		//data[0]이름, data[1]이미지, data[2]가격
+		var data = localStorage.getItem(key).split(",");
+		html +='<tr><td><img class=poster src='+data[1]+'></td><td>'+key+
+				'</td><td>'+data[0]+'</td><td>'+data[2]+
+				'</td><td><button id=delCart value='+key+'>삭제</button></td></tr>';
+		totalPrice += parseInt(data[2]); //int화
+	}
+	
+	$('#content').html(html);
+	$('#price').html('총 주문 가격 '+totalPrice);
+}
+function deleteCart() {
+	//localStorage에 있는 데이터를 삭제
+	var y=confirm($(this).val()+"을 정말 삭제하시겠습니까?");
+	if(y){
+		localStorage.removeItem($(this).val());
+		refreshPage();
+	}
+	
+}
+
+</script>
+</head>
+<body>
+<article class="main">
+		<section>
+			<table width="80%"  align="center"  >
+			<caption class="caption">찜 리스트</caption>
+			<thead>
+				<tr><th>이미지</th><th>상품번호</th><th>상품이름</th><th>가격</th><th>삭제</th></tr>
+			</thead>
+			<tbody id="content">
+			</tbody>
+			</table>
+		</section>
+		<section  class="toalprice" id="price">
+			
+		</section>
+		<section class="link">
+			<table   align="center">
+			<tr><td align="center">
+				<a href="">주문하러 가기</a> 
+				<a href="index.html">DVD 목록</a> 
+			</td></tr>
+			</table>
+		</section>
+		</article>
+</body>
+</html>

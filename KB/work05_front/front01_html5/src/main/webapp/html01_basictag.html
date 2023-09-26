@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>여기는 개인공간입니다.</title>
+	<script>
+		function push() {
+			alert("버튼이 눌러졌다...!")
+		}
+	</script>
+	<style type="text/css">
+		/* 태그 선택자 지정 ... 화면 전체 스타일*/
+		body{
+			width: 600px;
+			height: 400px;
+			margin: 0 auto;
+		}
+		
+		#order {
+			float: left;
+			width: 50%;
+		}
+		#unorder {
+			float: right;
+			width: 50%;
+		}
+		
+		#header {
+			color: orange;
+		
+		}
+	</style>
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1>This is heading 1</h1>
+			<h2>This is heading 2</h2>
+			<h3>This is heading 3</h3>
+			<h4>This is heading 4</h4>
+			<h5>This is heading 5</h5>
+			<h6>This is heading 6</h6>
+		</div>
+		<hr>
+		<br>
+		<div id="order">
+			<p>Order List</p>
+			<p>순번을 가지는 목록 리스트</p>
+			<ol>
+				<li><a href="https://www.java.com/ko/download/help/whatis_java.html">자바</a></li>
+				<li><a href="https://www.w3schools.com/">html</a></li>
+				<li><a href="http://www.oracle.com">JDBC</a></li>
+				<li><a href="http://tomcat.apache.org">SERVLET</a></li>
+			</ol>
+		</div>
+		<div id="unorder">
+			<p>UnOrder List</p>
+			<br>
+			<ul>
+				<li>자바</li>
+				<li>html</li>
+				<li>JDBC</li>
+				<li>SERVLET</li>
+			</ul>
+		</div>
+		<!-- 버튼을 누르면 -->
+		<button onclick="push()">Click me!</button>
+	</body>
+</html>

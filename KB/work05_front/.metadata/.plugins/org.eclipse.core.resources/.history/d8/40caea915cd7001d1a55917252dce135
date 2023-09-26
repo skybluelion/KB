@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#bank {
+		border: 1px solid green;
+		padding: 10px;
+		overflow: hidden;
+	}
+	
+	#kbstar{
+		border: 1px solid tomato;
+		margin: 0ps;
+		float: left;
+		/* 
+		지금처럼 자식요소에서 float 속성을 사용할 때,
+		부모요소의 범위를 벗어 남으로써 문제가 발생
+		1. 부모 범위를 아예 크게 잡아버림... 문제있는 방법
+		2. 일종의 overflow 현상...hidden으로 지정...부모요소에 지정해야함.
+		
+		 */
+	}
+	
+	#article{
+		border: 1px solid yellow;
+		float: right;
+		margin: 0px;
+		height: 30px;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div id="bank">
+		<div id = "kbstar">
+			KB IT's My Life.
+		</div>
+	</div>
+	
+	<div id = "article">
+		2023-04-10 Front UI CSS3
+	</div>
+</body>
+</html>

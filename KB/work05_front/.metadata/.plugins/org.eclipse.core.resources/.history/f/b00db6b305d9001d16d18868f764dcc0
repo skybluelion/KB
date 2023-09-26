@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>영화 예매</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var theater = $("select option:selected").val();
+		alert(theater);
+		
+	})
+</script>
+<style type="text/css">
+	#first{
+		width: 600px;
+		height: 900px;
+		margin: 0 auto;
+	}
+	h1,h2{
+		text-align: center;
+	}
+	img{
+		margin-left: 150px;
+	}
+</style>
+</head>
+<body>
+	<div id="first">
+		<h1>KB Star Theater</h1>
+		<h2>Kill 복순 영화 예매</h2>
+		<img alt="tom poster" width="300"  height="400" src="data:image/jpeg;base64,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">
+		<p></p>
+		<p></p>
+		
+		<form>
+			<label>상영관</label>
+			<select>
+				<option>CGV</option>
+				<option>롯데시네마</option>
+				<option>메가박스</option>
+				<option>프리머스</option>
+				<option>다른극장</option>
+			</select>
+			
+			<label>날짜 선택</label><input type="date"/>
+			<fieldset>
+				<legend size=30>시간선택</legend>
+				<input type="radio" name="time" value="08:30" class="time" checked="checked"/><label>08:30</label>
+				<input type="radio" name="time" value="11:00" class="time"  /><label>11:00</label>
+				<input type="radio" name="time" value="14:20" class="time"/><label>14:20</label>
+				<input type="radio" name="time" value="17:25" class="time"/><label>17:25</label>
+				<input type="radio" name="time" value="20:10" class="time"/><label>20:10</label>
+				<input type="radio" name="time" value="23:05" class="time" /><label>23:05</label>
+			</fieldset>
+			<p/>
+			<label>요금</label>&nbsp;&nbsp;<span id="jojo"> <del>W9,000</del>&nbsp;&nbsp; <ins>W5,000</ins></span><!--span id="ilban" >W9,000</span--><p/>
+			<input type="hidden" id="cost" value="9000" />
+			<label>인원</label> <input type="number" required="required" id="people" value="0"/><p/>
+			<label>금액</label> <input type="number" readonly="readonly" id="price" value="0"/>
+			<p>
+			<input type="checkbox" id="op" checked="checked"/><label>옵션</label>
+			<div id="option">
+				<fieldset>
+					<input type="checkbox" name="popcorn"/><label>팝콘</label>
+					<input type="checkbox" name="cola"/><label>콜라</label>
+				</fieldset>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.title {
+	margin-left: 400px;
+	margin-right: 400px;
+	border: 1px solid darkgray;
+	color: black;
+}
+h3{
+	color: white;
+	margin-top: 2px;
+}
+
+.inputBox {
+	margin-left: 400px;
+	margin-right: 400px;
+	border: 1px solid white;
+	background-image : url("img/1.jpg");
+	
+}
+
+.desc {
+	margin-bottom: 0.5rem;
+}
+
+.button {
+	background-color: white;
+	color: rgb(2, 21, 63);
+	width: 150px;
+	height: 30px;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	font-weight: 900;
+}
+
+body {
+	text-align: center;
+	background-color: LightGray;
+}
+
+.margin{
+	margin-top: 150px;
+}
+
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+	<h2 class="title">Product Register</h2>
+	<div class="inputBox">
+		<form action="AddProduct" method="post">
+			<h3 class = "margin">
+				상 품 명 : <input height="50" type="text" name="name">
+			</h3>
+			<h3>
+				상품가격 : <input height="50" type="text" name="price">
+			</h3>
+			<h3 class="desc">상품설명</h3>
+			<hr color="white">
+			<textarea class="ta" name="description" rows="5" cols="60"></textarea><br>
+			<br><input class="button" type="submit" value="Add"> <input
+				class="button" type="reset" value="Reset">
+		</form>
+	</div>
+</div>
+</body>
+</html>

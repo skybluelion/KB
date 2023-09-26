@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소들간의 간격</title>
+
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #f9fafc;
+		margin: 60px;
+	}
+	.container{
+		border: 5px dashed #cacfd9;
+		width: 500px;
+		height: 500px;		
+		
+		display: flex;
+		
+		/* 각 영역에 공간을 부여... gap.. margin 대신에 */
+		/* 가로 방향 뿐만 아니라 세로 방향도 */
+		gap : 30px;
+	}
+	.box{
+		border-radius: 15px;
+		color: #f9fafc;
+		padding: 30px;
+	}
+	.red{
+		background-color: Tomato;
+	}
+	.green{
+	 	background-color: MediumSeaGreen;
+/* 	 	margin: 30px;  30px 이만큼의 공간이 생긴다  */
+/*	 	margin:0 30px;  30px 이만큼의 공간이 좌우에 생긴다 */
+/*	 	 이런식의 공간을 주는 것이 그닥 효율적이지 않다. */
+
+	 }
+/*	 .box:not(last-child) { 맨 마지막 box는 제외하고 오른쪽에 공간을 30 
+	 		margin-right: 30px;
+	 	} */
+	 .blue{
+	 	background-color: DodgerBlue;
+	 }	
+	
+
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="red box">RED</div>
+	<div class="green box">GREEN</div>
+	<div class="blue box">BLUE</div>
+	
+	<div class="green box">GREEN</div>
+
+</div>
+</body>
+</html>

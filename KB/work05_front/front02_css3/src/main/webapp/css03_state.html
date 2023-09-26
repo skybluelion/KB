@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Insert title here</title>
+<style>
+	/*1. class 선택자 .  */
+	.center{
+		color:green;
+		font-size:14px;
+	}
+	
+	.large{
+		color: crimson;
+		font-weight: bold;
+	}
+	/*2. id 선택자 # */
+	#send {
+		background-color: yellow;
+	}
+	
+	/*3. tag 선택자  */
+	form{
+		border: 3px solid Tomato;
+		padding: 20px;
+		margin: 30px;
+	}
+	
+	p{
+		color:tomato;
+	}
+	p.large{
+		border:1px solid magenta;
+	}
+</style>
+</head>
+<body>
+<!-- 
+block tag
+inline tag
+ -->
+<h2>State Attribute</h2>
+<form action="#">
+	<h3>Enabled</h3>
+	<input type="text" name="aa"/>
+	
+	<h3>Disabled</h3>
+	<input type="text" name="bb" disabled="disabled"/>
+	
+	<h3>Readonly</h3>
+	<input type="text" name="cc" readonly="readonly" value="BNK"/>
+	
+	<h3>Required</h3>
+	<input type="text" name="dd" required="required"/>
+	
+	<!-- 폼에 입력된 모든 값을 가지고 action에 등록된 페이지로 전송 -->
+	<input type = "submit" value = "DataSend" id = "send"/>
+</form>
+<hr>
+<h1 class="center">This heading will not be affected</h1>
+<p class="center">This paragraph will be red and center-aligned.</p>
+<p class="center large">This paragraph will be red, center-aligned, and in a large font-size.</p> 
+</body>
+</html>

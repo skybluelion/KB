@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main {
+	static int[] A;
+	static int[] temp;
+	static int cnt;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+		
+		A = new int[N];
+		st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < N; i++) {
+			A[i] = Integer.parseInt(st.nextToken());
+		}
+		cnt = 0;
+		mergeSort(0,A.length-1);
+		
+		bw.write(cnt+"");
+		
+		
+		bw.flush();
+		bw.close();
+		br.close();
+	}//main
+	private static void mergeSort(int left, int right) {
+		if(left>=right) return;
+		
+		int center = (left+right) / 2;
+		
+		mergeSort(left, center);
+		mergeSort(center+1, right);
+		
+	}
+}//class

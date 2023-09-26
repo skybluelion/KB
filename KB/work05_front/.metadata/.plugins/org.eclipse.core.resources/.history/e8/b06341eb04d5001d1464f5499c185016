@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Image 사용하기</title>
+		<style type="text/css">
+			div{
+				background: yellow;
+				
+			}
+			span {
+				background: gray;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<h1>영역을 구분하는 Tag :: div, span</h1>
+		<div>
+			div scope1
+		</div>
+			div scope2
+		<hr>
+		<span>
+			span scope1	
+		</span>
+			span scope2
+		
+	</body>
+</html>

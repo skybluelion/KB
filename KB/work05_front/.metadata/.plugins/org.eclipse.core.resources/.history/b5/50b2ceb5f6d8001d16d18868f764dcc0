@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.angel{border:2px solid black; width:200px; height:250px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('img').addClass('angel');
+		//1.특정 시간이 지난 뒤에 이미지 이동... 첫번째 이미지가 맨 뒤로 가도록... setTimeout()
+		//setTimeout 은 단 한번만 호출..계속 호출 하려면 setInterval()
+/* 		setTimeout(function() {
+			$('body').append($('img:eq(0)'));
+		},3000); */
+		
+		//2. 시간이 지남에 따라 지속적으로 바뀌도록
+		//append 함수는 태그 뒤에 태그 뒤에 내용을 붙일 때 사용하는 함수
+		setInterval(function() {
+			$('body').append($('img:eq(0)'));
+		},1000);
+	});
+</script>
+</head>
+<body>
+	<img src="../image/1.jpg">
+	<img src="../image/2.jpg">
+	<img src="../image/3.jpg">
+	<img src="../image/4.jpg">
+</body>
+</html>

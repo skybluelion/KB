@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>document.ready()</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	var list = '';
+	
+	//복합연산자 + 사용
+	list += '<ul>';
+	list += '<li>Hello</li>';
+	list += '<li>JavaScript</li>';
+	list += '</ul>';
+	
+	//1. div 영역을 document에서 받아온다
+	document.getElementById("wrap").innerHTML = list;
+	
+});
+
+$(document).ready(function() {
+		alert("aaaaa");
+});
+
+</script>
+</head>
+<body>
+<h2 align="center">===============onload===============</h2>
+<div id="wrap">
+
+
+</div>
+</body>
+</html>

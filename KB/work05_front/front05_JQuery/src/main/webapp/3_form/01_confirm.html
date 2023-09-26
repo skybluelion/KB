@@ -1,0 +1,42 @@
+<!-- 
+	JQuery에서 폼에 입력된 값 받아오거나 폼에 값 입력할 때... val() ... js value와 동일
+	JQuery에서 화면에 값을 출력하거나 화면의 값을 받아올때.. text(), html()...js innerHTML과 동일
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. a태그의 속성중에서 school이라는 단어가 포함된 선택자를 지정 ... 클릭함수 연결
+/* 	$('[href*=school]').click(function() { */
+/* 	$('a[href*=school]').bind('click', function() { */
+	$('a[href*=school]').on('click', function() {
+/* 		return confirm($(this).val()+"사이트로 이동할까요?"); */ //JQuery/w3school가 form값이 아니고 단순 text 이기 때문에 val()는 불가능 
+/* 		return confirm($(this).text()+"사이트로 이동할까요?"); */
+		return confirm($(this).html()+"사이트로 이동할까요?"); //확인 버튼 클릭시 이동하도록 return
+	});
+});
+</script>
+</head>
+<body>
+<a href="http://www.jquery.com">JQuery</a>
+<a href="https://www.w3schools.com/">w3school</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

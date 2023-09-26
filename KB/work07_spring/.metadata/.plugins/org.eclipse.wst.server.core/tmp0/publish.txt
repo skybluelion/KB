@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed May 03 14:21:32 KST 2023
+org.eclipse.jst.jee.server\:sp14_FileUpload_Download=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\sp14_FileUpload_Download
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\student\\.m2\\repository\\org\\springframework\\spring-web\\4.1.1.RELEASE\\spring-web-4.1.1.RELEASE.jar=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\sp14_FileUpload_Download\\WEB-INF\\lib\\spring-web-4.1.1.RELEASE.jar

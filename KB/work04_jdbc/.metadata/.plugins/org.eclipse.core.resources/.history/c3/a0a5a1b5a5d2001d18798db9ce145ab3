@@ -1,0 +1,108 @@
+package broker.twotier.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import broker.twotier.exception.DuplicateSSNException;
+import broker.twotier.exception.InvalidTransactionException;
+import broker.twotier.exception.RecordNotFoundException;
+import broker.twotier.vo.CustomerRec;
+import broker.twotier.vo.SharesRec;
+import broker.twotier.vo.StockRec;
+import config.ServerInfo;
+
+public class Database implements DatabaseTemplate{
+
+	//싱글톤
+	private static Database dao = new Database();
+	private Database() {}
+	public static Database getInstance() {
+		return dao;
+	}
+	
+	public Database(String serverIp) throws ClassNotFoundException{
+        Class.forName(ServerInfo.DRIVER_NAME);
+        System.out.println("드라이버 로딩 성공..");
+    }
+	
+    @Override
+    public Connection getConnect() throws SQLException {
+        Connection conn =DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+        System.out.println("Database Connection......");
+        return conn;
+    }
+
+    @Override
+    public void closeAll(PreparedStatement ps, Connection conn) throws SQLException {
+    	if(ps!=null) ps.close();
+    	if(conn!=null) conn.close();            
+    }
+    
+    @Override
+    public void closeAll(ResultSet rs, PreparedStatement ps, Connection conn) throws SQLException {
+    	if(rs!=null) rs.close();
+    	closeAll(ps, conn);            
+    }
+    
+    //ssn이 있는지 없는지 확인하는 기능....하나 추가...isIsbn()과 동일한 기능
+    public boolean isExist(String ssn, Connection conn)throws SQLException{
+    	String sql ="SELECT ssn FROM customer WHERE ssn=?";
+    	PreparedStatement ps = conn.prepareStatement(sql);
+    	
+    	ps.setString(1,ssn);
+    	ResultSet rs = ps.executeQuery();
+    	return rs.next();
+    }
+
+    ///////////////// 비지니스 로직 /////////////////////
+	@Override
+	public void addCustomer(CustomerRec cust) throws SQLException, DuplicateSSNException {
+		
+	}
+
+	@Override
+	public void deleteCustomer(String ssn) throws SQLException, RecordNotFoundException {
+		
+	}
+
+	@Override
+	public void updateCustomer(CustomerRec cust) throws SQLException, RecordNotFoundException {
+		
+	}
+
+	@Override
+	public ArrayList<SharesRec> getPortfolio(String ssn) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public CustomerRec getCustomer(String ssn) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public ArrayList<CustomerRec> getAllCustomers() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public ArrayList<StockRec> getAllStocks() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public void buyShares(String ssn, String symbol, int quantity) throws SQLException {
+		
+	}
+
+	@Override
+	public void sellShares(String ssn, String symbol, int quantity)
+			throws SQLException, InvalidTransactionException, RecordNotFoundException {
+		
+	}
+
+}

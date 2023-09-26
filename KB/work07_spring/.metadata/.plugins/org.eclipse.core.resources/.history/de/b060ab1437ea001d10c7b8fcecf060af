@@ -1,0 +1,57 @@
+package com.service.spring.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.service.spring.domain.Phone;
+import com.service.spring.model.PhoneService;
+
+@Controller
+public class PhoneController {
+	
+	@Autowired
+	private PhoneService phoneService;
+	
+	@GetMapping("/") //http://127.0.0.1:8899/
+	public String index() {
+		return "redirect:index.jsp";
+	}
+	
+	@GetMapping("regPhone") //폰등록화면 요청
+	public String getRegPhone(Model model) {
+		model.addAttribute("title", "핸드폰 관리 - 핸드폰 등록 폼");
+		return "PhoneReg";
+	}
+	
+	@PostMapping("savePhone") //폰등록 화면에서 저장버튼 클릭..post요청
+	public String doRegPhone(Phone phone,Model model) {
+		try {
+			//성공페이지
+			phoneService.insert(phone);
+			model.addAttribute("title", "핸드폰 관리 - 핸드폰 저장 성공");
+			return "Result";
+		}catch(Exception e) {
+			//실패페이지
+			model.addAttribute("title", "핸드폰 관리 - 핸드폰 저장 에러");
+			return "Error";
+		}
+	}
+	
+	@GetMapping("searchPhone") //모든 폰정보 가져오기..get
+	public String doList(Model model) {
+		try {
+			List<Phone> list = phoneService.select();
+			model.addAttribute("phones",list);
+			model.addAttribute("title", "핸드폰 관리 - 핸드폰 리스트");
+			return "PhoneList";
+		}catch (Exception e) {
+
+		}
+	}
+}

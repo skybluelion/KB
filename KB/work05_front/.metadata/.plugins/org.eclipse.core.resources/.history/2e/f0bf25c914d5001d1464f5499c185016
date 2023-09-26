@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>킬복순 영화 예매사이트</title>
+<style type="text/css">
+	#wrap {
+		width: 800px;
+		margin: 0 auto;
+	}
+	
+	#main {
+		width: 500px;
+		height: 620px;
+		border: 5px solid red;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	h2,h3 {
+		text-align: center;
+	}
+	
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+
+
+</style>
+</head>
+<body>
+	<div id="main">
+		<div id = "top">
+			
+			<h2>Kill 복 순</h2>
+			<h3>==== KB ★ 영화예매 ====</h3>
+			<center>
+			<img dlt="poster_img" src="./img/kill.jpg" width="200px">
+			</center>
+			
+		</div>
+		<div id="bottom">
+			<div>
+			상영관 <input type="checkbox">
+			 
+			날짜 선택 <input checked="상영관">
+			</div>
+			<fieldset>
+			<legend>시간 선택</legend>
+			</fieldset>
+			
+			<div id = "money">
+			<span>요금</span><span>9000</span><span>5000</span>
+			</div>
+			<div>인원 <input checked="인원"></div>
+			<div>금액 <input checked="금액"></div>
+			<div><input type="checkbox"> 옵션</div>
+			<fieldset>
+			<input type="checkbox"> 팝콘 <input type="checkbox"> 콜라
+			</fieldset>
+		</div>
+	</div>
+</body>
+</html>

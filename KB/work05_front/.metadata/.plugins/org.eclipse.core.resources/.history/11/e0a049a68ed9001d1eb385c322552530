@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(st.nextToken());
+		Stack<Integer> stk = new Stack<>();
+		
+		for (int i = 0; i < N; i++) {
+			st = new StringTokenizer(br.readLine());
+			String str = st.nextToken();
+			if(str.equals("push")) stk.push(Integer.parseInt(st.nextToken()));
+			else if(str.equals("pop")) {
+				int A = stk.peek();
+				bw.write(A+"");
+				stk.pop();
+			}
+			else if(str.equals("size")) bw.write(stk.size()+""); 
+			else if(str.equals("empty")) {
+				if(stk.isEmpty()) bw.write(1+"");
+				else bw.write(0+"");
+			} else if(str.equals("front")) {
+				if(stk.isEmpty()) bw.write(-1+"");
+				else bw.write(stk.firstElement()+"");
+			} else if(str.equals("back")) {
+				if(stk.isEmpty()) bw.write(-1+"");
+				else bw.write(stk.lastElement()+"");
+			}
+		}
+		
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+}

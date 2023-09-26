@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.angel{border:2px solid black; width:200px; height:250px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  
+		$('body').append('<h2>Image append Test..</h2>')
+			
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

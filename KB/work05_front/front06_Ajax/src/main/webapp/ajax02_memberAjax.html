@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 반응형 웹-> 모바일 -->
+<title>Insert title here</title>
+<style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#ajaxBtn').click(function() {
+		let id = $('#useId').val();
+		//비동기 시작
+		$.ajax({
+			//요청
+			type:'get',
+			url:'./member.json',
+			
+			//응답.. 서버가 실행한 결과의 데이터를 받는 것
+			success:function(result){
+				//result안에 들어있는 회원들의 id값들을 resultView영역에 출력, red
+				var members = result.members;
+								
+				$.each(members, function(index, item) {
+					$('#resultView').append("<h2><font color='crimson'>"
+											+item.id+"</font></h2>");
+				});
+			}//callback
+		});//ajax
+	});//click
+  });
+</script>
+</head>
+<body>
+	ID<input type="text" name="userId" id="useId">
+	<input type="button" value="ajaxBrn" id="ajaxBtn">
+	<div id="resultView"></div>
+</body>
+</html>

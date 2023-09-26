@@ -1,0 +1,70 @@
+package com.jbdc.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import config.ServerInfo;
+
+//비지니스로직 :: 디비 Access하는 로직... sql이 동작
+
+public class CustomerDAO {
+	public CustomerDAO() {
+		System.out.println("DAO Creating...");
+	}
+	
+	//DML, SELECT SQL이 각각의 기능에서 작동하도록 비지니스로직을 정의
+	public void addCustomer(String ssn, String name, String addr) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = DriverManager.getConnection(ServerInfo.URL,ServerInfo.USER,ServerInfo.PASS);
+			//INSERT INTO
+			DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+			System.out.println("DB...Connection...is OK");
+			
+			String query = "INSERT INTO customer (ssn, name, address) VALUES(?,?,?)";
+			ps = conn.prepareStatement(query);
+			ps.setString(1,ssn);
+			ps.setString(2,name);
+			ps.setString(3,addr);
+			
+			int row = ps.executeUpdate();
+			System.out.println(row+"row INSERT ok...");
+		}finally {
+			ps.close();
+			conn.close();
+		}
+		
+	}
+	public void removeCustomer(String ssn) throws SQLException{
+		//DELETE
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = DriverManager.getConnection(ServerInfo.URL,ServerInfo.USER,ServerInfo.PASS);
+			DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+			System.out.println("DB...Connection...is OK");
+			
+			String query = "DELETE customer WHERE ssn=?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, ssn);
+
+			
+			int row = ps.executeUpdate();
+			System.out.println(row+"row DELETE ok...");
+		}finally {
+			ps.close();
+			conn.close();
+		}
+	}
+	public void updateCustomer() {
+		//UPDATE SET
+		
+	}
+	
+	public void printAllCustomer() {
+		//SELECT
+	}
+}

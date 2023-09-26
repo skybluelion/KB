@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- 다양한 폼입력양식을 하나로 묶어주는 태그 -->
+		<form action="#">
+		ID : <input type="text" name="id">
+		</form>
+	</body>
+</html>

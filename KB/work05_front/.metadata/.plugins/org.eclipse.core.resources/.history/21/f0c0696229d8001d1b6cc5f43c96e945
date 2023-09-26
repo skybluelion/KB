@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function push() {
+		var demo = document.getElementById("demo");
+		alert(demo);
+	}
+</script>
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick="push()">Click Me</button>
+
+</body>
+</html>

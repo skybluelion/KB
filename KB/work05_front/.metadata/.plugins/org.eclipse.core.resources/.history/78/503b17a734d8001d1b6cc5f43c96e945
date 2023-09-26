@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function choiceMenu() {
+		let menu = document.frm.menu;
+		
+		/* 
+		1. 메뉴를 하나도 고르지 않았다면... 하나의 메뉴를 선택하시오.
+		2. 하나 이상의 메뉴를 선택했다면... 선택한 메뉴를 alert 창으로 출력.
+		*/
+		var str="";
+		for(var i = 0; i<menu.length; i++){
+			if(menu[i].checked){
+				str += menu[i].value+", ";
+			}
+			
+		}
+		
+		alert(str);
+	}
+
+</script>
+</head>
+<body>
+	<form name="frm">
+	<strong>오늘 저녁 드시고 싶은 메뉴를 전부 고르세요.</strong><br><br>
+	<input type="checkbox" name="menu" value="스파게티">스파게티 <br>
+	<input type="checkbox" name="menu" value="해물라면">해물라면 <br>
+	<input type="checkbox" name="menu" value="냉면">냉면 <br>
+	<input type="checkbox" name="menu" value="우동">우동 <br>
+	<input type="checkbox" name="menu" value="짬뽕">짬뽕 <br>
+	
+	<input type="button" value="CHOICE" onclick="choiceMenu()">
+	</form>
+</body>
+</html>

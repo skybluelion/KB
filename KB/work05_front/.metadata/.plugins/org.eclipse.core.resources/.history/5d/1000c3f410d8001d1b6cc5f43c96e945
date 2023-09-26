@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 데이타 타입 정리</title>
+<!-- 
+자바스크립트에서 제공하는 기본 데이타 타입들
+number
+string
+boolean
+함수형
+객체형
+undefined
+ -->
+ <script>
+ /* variable이라는 변수 선언, 변수의 타입을 변수명 앞에 지정x */
+ var variable;
+ var stringvar = "string";
+ var numbervar = 277;
+ var booleanvar = true;
+ var functionvar = function(){}; //익명함수
+ var objectvar = {}; // json 형태
+ 
+ alert(stringvar);
+ alert(numbervar);
+ alert(booleanvar);
+ alert(functionvar);
+ alert(objectvar);
+ </script>
+ 
+ 
+ 
+</head>
+<body>
+
+</body>
+</html>

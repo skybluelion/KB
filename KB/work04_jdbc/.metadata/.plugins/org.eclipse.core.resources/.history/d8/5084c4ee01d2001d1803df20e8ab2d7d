@@ -1,0 +1,31 @@
+package jdbc.client;
+
+import java.util.ArrayList;
+
+
+import jdbc.dao.impl.MemberDAOImpl;
+import jdbc.dto.Member;
+
+public class MemberDAOImplTest {
+
+	public static void main(String[] args) {
+		MemberDAOImpl dao = MemberDAOImpl.getInstance();
+		try {
+
+//			dao.insertMember(new Member(5,"스미스","abc4@gmail.com","010-4444-1234"));
+//			dao.deleteMember(6);
+			dao.updateMember(new Member(7,"제임스","ddd4@gmail.com","010-4444-1234"));
+//			System.out.println(dao.getMember(3));
+//			ArrayList<Member> list = dao.getMember();
+//			for(Member c : list) System.out.println(c);
+//			ArrayList<Member> list = dao.getMember("제임스");
+//			for(Member c : list) System.out.println(c);
+		
+		
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}

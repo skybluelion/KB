@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 반응형 웹-> 모바일 -->
+<title>forEach()</title>
+<style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#eachBtn').click(function() {
+		//버튼 클릭시 배열 생성
+		var array = [];
+		array.push("문동은");
+		array.push("박연진");
+		array.push("이사라");
+		array.push("손명호");
+		
+/* 		alert(aaray.toString()); */
+ 		alert(array.length); 
+    
+    });
+  });
+</script>
+</head>
+<body>
+	<input type="button" value="배열생성하고 each()적용" id="eachBtn">
+</body>
+</html>

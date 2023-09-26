@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function choiceMenu() {
+		let menu = document.frm.menu;
+		alert(menu.length);
+	}
+
+</script>
+</head>
+<body>
+	<form name="frm">
+	<strong>오늘 저녁 드시고 싶은 메뉴를 전부 고르세요.</strong><br><br>
+	<input type="checkbox" name="menu" value="스파게티">스파게티 <br>
+	<input type="checkbox" name="menu" value="해물라면">해물라면 <br>
+	<input type="checkbox" name="menu" value="냉면">냉면 <br>
+	<input type="checkbox" name="menu" value="우동">우동 <br>
+	<input type="checkbox" name="menu" value="짬뽕">짬뽕 <br>
+	
+	<input type="button" value="CHOICE" onclick="choiceMenu()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="sp10_SpringMVC_product"/>
+<aop-project name="sp11_JSTLView"/>
+<aop-project name="sp14_FileUpload_Download"/>
+<aop-project name="sp13_CafeMember_Ajax"/>
+<aop-project name="sp05_AOP"/>
+<aop-project name="sp01_SpringDI"/>
+<aop-project name="sp07_SpringMVC"/>
+<aop-project name="ws04_CafeMember_T"/>
+<aop-project name="sp17_jpa_member"/>
+<aop-project name="sp16_boot_pms"/>
+<aop-project name="sp06_SpringMVC"/>
+<aop-project name="sp04_MyBatis"/>
+<aop-project name="sp12_Ajax"/>
+<aop-project name="sp02_SpringDI"/>
+<aop-project name="sp08_SpringMVC_Form"/>
+<aop-project name="ws03_Spring_Anno"/>
+<aop-project name="sp09_SpringMVC_Fruits"/>
+<aop-project name="ws04_CafeMember"/>
+<aop-project name="sp15_boot"/>
+</aop-reference-model>

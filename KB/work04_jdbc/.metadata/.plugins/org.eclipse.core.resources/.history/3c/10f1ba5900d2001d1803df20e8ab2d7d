@@ -1,0 +1,23 @@
+package jdbc.client;
+
+import jdbc.dao.impl.MemberDAOImpl;
+import jdbc.dto.Member;
+
+public class MemberDAOImplTest {
+
+	public static void main(String[] args) {
+		MemberDAOImpl dao = MemberDAOImpl.getInstance();
+		try {
+			dao.insertMember(new Member(4,"스미스","abc4@gmail.com","010-4444-1234"));
+			
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}
+//private int id;
+//private String name;
+//private String email;
+//private String phone;

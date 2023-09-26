@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DuplicateIDException.java&apos; to &apos;jdbc.exception.DuplicateIDException.java&apos;&#x0D;&#x0A;- Original project: &apos;ws01_jdbc&apos;&#x0D;&#x0A;- Destination element: &apos;jdbc.exception.DuplicateIDException.java&apos;&#x0D;&#x0A;- Original element: &apos;jdbc.exception.DuplicateIDException.java&apos;" description="Copy compilation unit" destination="/src&lt;jdbc.exception{DuplicateIDException.java" element1="/src&lt;jdbc.exception{DuplicateIDException.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1680508874994" units="1" version="1.0"/>
+</session>

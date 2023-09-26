@@ -1,0 +1,45 @@
+package com.service.spring.model;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.service.spring.domain.Member;
+
+public interface MemberRepository extends JpaRepository<Member, String>{
+	
+	/*
+	 * save()---registerMember
+	 * delete()---deleteMember
+	 * count()
+	 * findAll()---showAll
+	 * ------------------------
+	 * login
+	 * findByIdMember
+	 * updateMember
+	 * String idExist(String id)
+	 */
+	
+	/*
+	 * @Query(value = "select * from board where id=? and password = ?" ,
+	 * nativeQuery = true) //Entity중심이아닌 DB중심으로 쿼리를 작성함 Member login(Member member);
+	 */
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

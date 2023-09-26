@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\KB\work05_front\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\713848345.index
+\front05_JQuery\src\main\java
+C:\KB\work05_front\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2882775669.index
+\front05_JQuery\src\main\java
+C:\KB\work05_front\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\906380479.index
+\front05_JQuery\src\main\java

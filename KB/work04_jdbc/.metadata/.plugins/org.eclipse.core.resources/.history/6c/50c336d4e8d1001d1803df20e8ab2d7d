@@ -1,0 +1,12 @@
+package com.jdbc.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public interface CustomerDAO {
+	//공통적인 기능.. public abstract 생략
+	Connection getConnect() throws SQLException;
+	void closeAll(Connection conn, PreparedStatement ps) throws SQLException;
+	void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException;
+}

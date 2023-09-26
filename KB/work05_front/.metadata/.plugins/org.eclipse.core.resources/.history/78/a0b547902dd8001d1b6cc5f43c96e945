@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" name="loginFrm">
+		닉네임 <input type="text" name="nick" id="nick">
+		<input type="button" value="닉네임보기" onclick="showName()">
+	</form>	
+</body>
+</html>

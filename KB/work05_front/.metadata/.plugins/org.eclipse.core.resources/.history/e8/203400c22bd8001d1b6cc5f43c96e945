@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+	1. 폼에 입력된 값이 없다면,, 나이는 반드시 입력하세요... 메세지
+	2. 숫자 대신에 문자가 입력되면.. 나이는 숫자로 입력하세요... 메세지
+	3. 입력된 숫자값이 19세 이상이라면.. 성인인증
+	4. 입력된 숫자값이 19세 미만이라면.. 미성년인증
+	
+	5. 모든 경우에 입력된 값이 리셋... 다시 Age에 포커스가 맞춰지도록
+	*/
+	function checkAge() {
+		let ageFrm=document.frm.ageFrm;
+		alert(ageFrm);
+	}
+
+</script>
+
+</head>
+<body>
+	<h2> Adult Movie 19 </h2>
+	<form name="frm">
+		나이 <input type="text" name="ageFrm">
+		<button type="button" onclick="checkAge()">나이 확인</button>
+	</form>
+
+</body>
+</html>

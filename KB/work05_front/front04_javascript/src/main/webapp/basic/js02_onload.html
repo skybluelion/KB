@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자, onload함수</title>
+<!-- 
+	onload 함수는 이 안에 들어있는 코드가 해당 html파일이 다 로딩된 후에 동작하도록 해준다.
+	
+	하나의 파일 안에서는 onload는 단 하나만 존재할 수 있다.
+	
+	JQuery에서는 document.ready() 함수와 동일한 기능이다.
+
+ -->
+
+<script>
+window.onload = function() {
+	var list = '';
+	
+	//복합연산자 + 사용
+	list += '<ul>';
+	list += '<li>Hello</li>';
+	list += '<li>JavaScript</li>';
+	list += '</ul>';
+	
+	//1. div 영역을 document에서 받아온다
+	document.getElementById("wrap").innerHTML = list;
+	
+};
+</script>
+</head>
+<body>
+<h2 align="center">===============onload===============</h2>
+<div id="wrap">
+
+
+</div>
+</body>
+</html>

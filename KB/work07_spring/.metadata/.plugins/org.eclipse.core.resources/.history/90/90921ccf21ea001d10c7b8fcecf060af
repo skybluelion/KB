@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="sql.pms.mapper">
+	<!-- 폰 등록하기 -->
+	<insert id="insert" parameterType="phone" >
+		INSERT INTO
+		phones (num, model, price, vcode)
+		VALUES (#{num},#{model},#{price},#{vcode})
+	</insert>
+	
+	<!-- 폰 조회하기 :: where num = #{VALUE} :: 동적쿼리 사용
+		num, model, price, vcode - JOIN 사용안하면 Cartesian Product 
+		모든 폰 조회하기 - selectList()
+		특정 폰 조회하기 - selectOne()
+	 -->
+	<select id="select">
+	
+	</select>
+	
+	<!-- 로그인 기능 -->
+	<select id="selectUser">
+	
+	</select>
+	
+	<!-- 동시에 여러개의 폰을 삭제하는 쿼리문 :: checkbox 선택하는 폼과 연결시 -->
+	<delete id="">
+	
+	</delete>
+	
+	<update id="update">
+	
+	</update>
+</mapper>

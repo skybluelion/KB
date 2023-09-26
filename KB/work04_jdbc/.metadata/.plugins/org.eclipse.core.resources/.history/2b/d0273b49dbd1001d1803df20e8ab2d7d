@@ -1,0 +1,29 @@
+package com.jbdc.test;
+
+import com.jbdc.dao.CustomerDAO;
+
+import config.ServerInfo;
+
+/*
+ 1. CustomerDAO 객체생성(=메모리에 올린다)
+ 2. CustomerDAO의 기능을 호출
+ */
+public class CustomerDAOTest {
+
+	public static void main(String[] args) throws Exception{
+		CustomerDAO dao = new CustomerDAO();
+		dao.addCustomer("111", "설경구", "신당동");
+	
+	}
+	
+	static { //static 초기화 block
+		try {
+			Class.forName(ServerInfo.DRIVER_NAME);
+			System.out.println("Driver Loading...");
+		}catch(ClassNotFoundException e) {
+			System.out.println("Driver Loading ... fail..");
+			
+		}
+	}
+
+}

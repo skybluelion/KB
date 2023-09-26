@@ -1,0 +1,6 @@
+# server port
+server.port=8899
+
+# jsp path
+spring.mvc.view.prefix=/
+spring.mvc.view.suffix=.jsp

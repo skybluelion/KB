@@ -1,0 +1,12 @@
+package com.jdbc.exception;
+
+public class DuplicateSSNException {
+
+	public DuplicateSSNException() {
+		this("This is DuplicateSSNException");
+	}
+	
+	public DuplicateSSNException(String message) {
+		super(message);
+	}
+}

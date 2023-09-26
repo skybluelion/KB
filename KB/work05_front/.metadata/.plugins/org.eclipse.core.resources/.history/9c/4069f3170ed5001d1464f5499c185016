@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#wrap {
+		width: 960px;
+		margin: 0 auto;
+	}
+	
+	audio{
+		float: left;
+		width: 200px;
+	}
+	video{
+		float: right;
+		width: 660px;
+	}
+	
+	h1 {
+		text-align: center;
+		color: crimson;
+	}
+</style>
+
+</head>
+<body>
+	<div id="Wrap" >
+		<h1>Audio Tag 이용하기</h1>
+		<audio src="./media/Kalimba.mp3" controls="controls" autoplay="autoplay"></audio>
+		<video src="./media/avengers.mp4" controls="controls" width="700px"></video>
+	</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+#Tomcat publish data
+#Fri Apr 14 11:13:30 KST 2023
+org.eclipse.jst.jee.server\:workshop05_Ajax=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\workshop05_Ajax
+org.eclipse.jst.jee.server\:front05_JQuery=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\front05_JQuery
+org.eclipse.jst.jee.server\:front07_Bootstrap=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\front07_Bootstrap
+org.eclipse.jst.jee.server\:workshop06_bootstrap=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\workshop06_bootstrap
+org.eclipse.jst.jee.server\:front06_Ajax=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\front06_Ajax

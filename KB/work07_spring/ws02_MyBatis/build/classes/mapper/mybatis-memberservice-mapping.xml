@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+	<insert id="registerMember" parameterType="member">
+		INSERT
+		INTO member(id, password, name, address)
+		VALUES(
+			#{id},
+			#{password},
+			#{name},
+			#{address}
+		)
+	</insert>
+	
+	<delete id="deleteMember" parameterType="string">
+		DELETE
+		FROM member
+		WHERE id=#{VALUE}
+	</delete>
+	
+	<update id="updateMember" parameterType="member">
+		UPDATE member
+		SET name=#{name}
+		WHERE id=#{id}
+	</update>
+	
+	<select id="showAllMember" resultType="member">
+		SELECT
+		id, 
+		password, 
+		name, 
+		address
+		FROM member
+	</select>
+	
+	<select id="getMember" parameterType="string" resultType="member">
+		SELECT
+		id,
+		password,
+		name,
+		address
+		FROM member
+		WHERE name=#{VALUE}
+	</select>
+	
+	<select id="idExist" parameterType="string" resultType="string">
+		SELECT
+		name
+		FROM member
+		WHERE id=#{VALUE}
+	</select>
+	
+	<select id="login" parameterType="member" resultType="string">
+		SELECT
+		name
+		FROM member
+		WHERE id=#{id} AND password=#{password}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>킬복순 영화 예매사이트</title>
+<style type="text/css">
+
+	
+	#main {
+		width: 800px;
+		height: 1000px;
+		border: 5px solid red;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	h1,h2 {
+		text-align: center;
+	}
+	
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#top, #bottom {
+		margin: 0 80px;
+	}
+
+</style>
+</head>
+<body>
+	<div id="main">
+		<div id = "top">
+			
+			<h1>Kill 복 순</h1>
+			<h2><b>==== KB ★ 영화예매 ====</b></h2>
+			<center>
+			<img dlt="poster_img" src="./img/kill.jpg" width="300px">
+			</center>
+			
+		</div>
+		<div id="bottom">
+			<div>
+			상영관 
+			<select name= "상영관">
+				<option value="CGV">CGV</option>	
+				<option value="롯데시네마">롯데시네마</option>	
+				<option value="메가박스">메가박스</option>	
+			</select>
+			
+			<label for="date">날짜 선택
+ 				 <input type="date"
+    				     id="date"
+     				    max="2023-05-31"
+      				  	min="2023-04-07"
+         				value="연도 -월 -일">
+			</label>
+			</div>
+			<fieldset>
+			<legend>시간 선택</legend>
+			<input type="radio" name ="time">08:30
+			<input type="radio" name ="time">11:00
+			<input type="radio" name ="time">14:20
+			<input type="radio" name ="time">17:25
+			<input type="radio" name ="time">20:10
+			<input type="radio" name ="time">23:05
+			</fieldset>
+			
+			<div id = "money">
+			<span>요금</span>
+			<span><del>₩9000</del></span>
+			<span><ins>₩5000</ins></span>
+			</div>
+			<div>인원 <input checked="인원"></div>
+			<div>금액 <input checked="금액"></div>
+			<div><input type="checkbox"> 옵션</div>
+			<fieldset>
+			<input type="checkbox"> 팝콘 <input type="checkbox"> 콜라
+			</fieldset>
+		</div>
+	</div>
+</body>
+</html>

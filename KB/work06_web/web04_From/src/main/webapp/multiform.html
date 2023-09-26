@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Get, Post방식의 요청 처리</h2>
+<h3>Get ("Get it!") 요청 : 이 때 작은 데이터도 함께 전달</h3>
+<a href="form?id=bank&name=kbstar">Formservlet으로 연결하기</a>
+<hr>
+<h3>Post ("Post Office!") 요청 : 데이터 전달이 주목적</h3>
+<form action="form" method="post"><!-- 반드시 method ="post" 라고 써야함 -->
+ID  <input type="text" name="id">  <br><br>
+PASS  <input type="password" name="password">  <br><br>
+
+<p><strong>사용 가능 기술을 모두 선택...</strong></p>
+<input type="checkbox" name="tech" value="java">JAVA
+<input type="checkbox" name="tech" value="python">PYTHON
+<input type="checkbox" name="tech" value="html5">HTML5
+<input type="checkbox" name="tech" value="django">DJANGO
+
+<br><br>
+
+<hr>
+<p><strong>당신의 성별을 선택..</strong></p>
+<input type="radio" name="gender" value="F">여성
+<input type="radio" name="gender" value="M">남성
+
+<br><br>
+<input type="submit" value="전송">
+<input type="reset" value="취소">
+</form>
+</body>
+</html>

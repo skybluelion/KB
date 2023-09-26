@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자, onload함수</title>
+</head>
+<body>
+<h2 align="center">===============onload===============</h2>
+<div id="wrap">
+
+
+</div>
+<script>
+var list = '';
+
+//복합연산자 + 사용
+list += '<ul>';
+list += '<li>Hello</li>';
+list += '<li>JavaScript</li>';
+list += '</ul>';
+
+//1. div 영역을 document에서 받아온다
+document.getElementById("wrap").innerHTML = list;
+</script>
+</body>
+</html>

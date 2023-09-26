@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자, onload함수</title>
+<script>
+var list = '';
+
+//복합연산자 + 사용
+list += '<ul>';
+list += '<li>Hello</li>';
+
+</script>
+</head>
+<body>
+<h2 align="center">===============onload===============</h2>
+<div id="wrap">
+
+</div>
+</body>
+</html>

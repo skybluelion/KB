@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/sunny/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+    	heightStyle: 'content'
+    });
+    //1. h3 태그를 클릭하면 ... 선택자와 함수를 연결...
+    $('#accordion h3').click(function() {
+		var text = $(this).text();
+		if(text=="KB Star 연수과목"){
+			$.ajax({
+				type:'get',
+				url:'subject.do',
+				
+				success:function(data){
+					$('#subject').html(data);
+				}
+			});
+		}else if(text=="KB 전국 산하 지점"){
+			$.ajax({
+				type:'get',
+				url:'branches.do',
+				
+				success:function(data){
+					$('#branches').html(data);
+				}
+			});
+		}
+    });
+  } );//ready
+  </script>
+</head>
+<body>
+
+<div id="accordion">
+	<h3>INTRO</h3>
+	<div>
+		<p>
+		KB IT's My Life 과정을 참여하신 여러분 반갑습니다.<br>
+		앞으로 남은 한달 기간동안 Framework의 정수를 보시게 될 겁니다.<br>
+		수업 연수가 끝난 후에는 취업 연수가 진행될 예정입니다.
+		</p>
+	</div>
+	<h3>KB Star 연수과목</h3>
+	<div id="subject">
+		
+	</div>
+	<h3>KB 전국 산하 지점</h3>
+	<div id="branches">
+		
+	</div>
+</div>
+</body>
+</html>

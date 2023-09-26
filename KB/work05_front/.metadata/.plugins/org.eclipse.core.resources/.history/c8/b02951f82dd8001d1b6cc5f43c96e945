@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function showName() {
+		
+	}
+	function showHobby() {
+		
+	}
+</script>
+
+
+</head>
+<body>
+	<form action="#" name="loginFrm">
+		닉네임 <input type="text" name="nick" id="nick">
+		<input type="button" value="닉네임보기" onclick="showName()">
+		
+		<br><br>
+		취미 <input type="text" name="hobby" id="hobby">
+		<input type="button" value="취미보기" onclick="showHobby()">
+		
+		
+	</form>	
+</body>
+</html>

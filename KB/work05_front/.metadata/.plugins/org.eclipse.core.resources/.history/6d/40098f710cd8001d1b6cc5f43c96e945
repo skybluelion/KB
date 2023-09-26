@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소들 꽉채우기</title>
+<!-- 
+flex box에서 요소를 꽉 채우고 싶을 때는
+
+요소를 얼마나 늘릴지 flex-grow
+요소를 얼마나 줄일지 flex-shrink
+ -->
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #f9fafc;
+		margin: 60px;
+		
+		width: 300px;
+	}
+	.container{
+		border: 5px dashed #cacfd9;
+		width: 500px;
+		height: 500px;		
+		display: flex;
+
+	}
+	.box{
+		border-radius: 15px;
+		color: #f9fafc;
+		padding: 30px;
+	}
+	.red{
+		background-color: Tomato;
+		writing-mode: vertical-lr;
+/* 		flex-shrink: 0; 기본값 0 500에서 안줄어들고*/
+	}
+	.green{
+	 	background-color: MediumSeaGreen;
+		writing-mode: vertical-lr;
+		flex-shrink: 1; /* 500에서 1만큼 줄어듬 */
+	}
+	.blue{
+	 	background-color: DodgerBlue;
+		writing-mode: vertical-lr;
+		flex-shrink: 2;
+	}	
+	
+
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="red box">RED</div>
+	<div class="green box">GREEN</div>
+	<div class="blue box">BLUE</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+footer {
+  /* 직접 작성합니다. */
+  text-align: left;
+  background: gray;
+}
+
+footer ul{
+  list-style-type: none;
+}
+footer ul li{
+  /* 직접 작성합니다. */
+    text-align: left;
+}

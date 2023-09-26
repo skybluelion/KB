@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{ background-color: #f9fafc; margin: 60px;}
+	.red{ background-color: Crimson; }
+	.blue{ background-color: DodgerBlue; }
+	.green{ background-color: MediumSeaGreen;
+	/* 원래 있어야할 위치에서 위에서 30, 왼쪽에서 50 들어간 위치에 배치됨. 
+		relative 포지션은 원래있어야할 위치를 기준으로 바뀌는 것이기에 
+		원래 있던 곳은 비워진다.
+	*/
+		position:relative; /* 상대적인 위치 */
+		top: 30px;
+		left: 50px;
+	}
+	.orange{ background-color: Orange; }
+	.purple{ background-color: SlateBlue; }
+	
+	.box{
+		padding: 30px;
+		color: #f9fafc;
+	}
+
+</style>
+</head>
+
+<body>
+<div class="red box">RED</div>
+<div class="blue box">BLUE</div>
+<div class="green box">GREEN</div>
+<div class="orange box">ORANGE</div>
+<div class="purple box">PURPLE</div>
+</body>
+</html>

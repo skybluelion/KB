@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function choiceMenu() {
+		var str='';
+		
+/* 		document.querySelector('#aaa') // 쿼리셀렉터는 하나만 가져올때 */
+  
+ 
+ 		/* 배열이기 때문에 자동으로 index가 생성됨. */
+		document.querySelectorAll("input[type='checkbox']").forEach(function(item, index) {
+			if(item.checked) str += item.value+" ";
+		});
+		if(str=="") alert("하나의 메뉴는 선택하세요.");
+		else alert("당신이 선택한 저녁메뉴는 "+str+ "입니다.");
+	}
+
+</script>
+</head>
+<body>
+	<form name="frm">
+	<strong>오늘 저녁 드시고 싶은 메뉴를 전부 고르세요.</strong><br><br>
+	<input type="checkbox" name="menu" value="스테이크">스테이크 <br>
+	<input type="checkbox" name="menu" value="삼겹살">삼겹살 <br>
+	<input type="checkbox" name="menu" value="항정살">항정살 <br>
+	<input type="checkbox" name="menu" value="갈매기살">갈매기살 <br>
+	<input type="checkbox" name="menu" value="치킨">치킨 <br>
+	
+	<input type="button" value="CHOICE" onclick="choiceMenu()">
+	</form>
+</body>
+</html>

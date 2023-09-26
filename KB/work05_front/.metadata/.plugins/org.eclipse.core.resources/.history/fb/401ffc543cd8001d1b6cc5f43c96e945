@@ -1,0 +1,18 @@
+footer {
+  /* 직접 작성합니다. */
+  text-align: right;
+  background: #D8D8D8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+footer ul{
+  list-style-type: none;
+}
+footer ul li{
+  /* 직접 작성합니다. */
+    margin: 5px;
+}

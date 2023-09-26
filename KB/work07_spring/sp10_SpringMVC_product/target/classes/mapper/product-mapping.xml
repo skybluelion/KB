@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyProductMapper">
+	<!-- INSERT문에서 pk에 해당하는 값이 db에서 자동증가되는 값인 경우
+		쿼리문 작성에 조심해야한다.
+		1)먼저 디비에서 pk값을 자동 증가시키고
+		2) 그값을 vo에 setter로 주임
+		결과적으로 pvo와 디비 데이터를 완벽하게 동기화시킨다.
+	 -->
+	<insert id="addProduct" parameterType="myProduct">
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			SELECT myproduct_seq.nextVal FROM dual
+		</selectKey>
+		INSERT
+		INTO myproduct (id,name,maker,price)
+		VALUES(#{id},#{name},#{maker},#{price})
+	</insert>
+	
+	<sql id="select-myproduct">
+		SELECT
+		id,name,maker,price
+		FROM
+		myproduct
+	</sql>
+	
+	<!-- 상품명으로 검색 -->
+	<select id="findProductByName" parameterType="string" resultType="myProduct">
+		<include refid="select-myproduct"/>
+		WHERE name LIKE '%' || #{VALUE} || '%'
+	</select>
+	
+	<!-- 제조사명으로 검색 -->
+	<select id="findProductByMaker" parameterType="string" resultType="myProduct">
+		<include refid="select-myproduct"/>
+		WHERE maker = #{VALUE}
+	</select>
+	
+	<!-- 모든 상품 검색 -->
+	<select id="findProducts" resultType="myProduct">
+		<include refid="select-myproduct"/>
+	</select>
+</mapper>

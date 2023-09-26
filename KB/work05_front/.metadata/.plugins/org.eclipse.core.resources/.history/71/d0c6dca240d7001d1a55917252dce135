@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Register Member Form</h2>
+	<form action="#" id="registerfrm">
+	NAME <input type="text" name="userName" required="required"> <br><br>
+	ID <input type="text" name="userId" required="required"> <br><br>
+	PASSWORD <input type="password" name="userPass" value="kblife" readonly="readonly"> <br><br>
+	GENDER <input type="radio" name="gender" value="F">여자
+	GENDER <input type="radio" name="gender" value="M">남자
+	</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var myName = "Peter"; // 전역변수
+	
+	function showInfo() {
+		myAge = 22; // 전역변수
+		console.info(myAge); // 22
+		//es6, ECMA 2015 ... let(로컬 변수 앞에 지정)
+		let age = 33; // 지역변수/로컬변수
+		var yourAge = 44;
+		
+	}
+
+	showInfo();
+	console.info(myAge); //22 method block 밖에서 사용해도 호출이 가능
+	console.info(myName); //Peter
+	console.info(age); // Uncaught ReferenceError: age is not defined
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

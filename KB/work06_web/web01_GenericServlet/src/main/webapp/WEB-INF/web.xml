@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+	<servlet>
+		<servlet-name>MyGenericServlet</servlet-name>
+		<servlet-class>web.servlet.generic.MyGenericServlet</servlet-class>
+	</servlet> <!-- 객체 생성 -->
+	
+	<servlet-mapping>
+		<servlet-name>MyGenericServlet</servlet-name>
+		<url-pattern>/MGS</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,106 @@
+package com.jdbc.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.jdbc.domain.Customer;
+import com.jdbc.exception.DuplicateSSNException;
+import com.jdbc.exception.RecordNotFoundException;
+
+import config.ServerInfo;
+
+public class CustomerDAOImpl implements CustomerDAO{
+
+	//싱글톤
+	private static CustomerDAOImpl dao = new CustomerDAOImpl();
+	private CustomerDAOImpl() {	}
+	public static CustomerDAOImpl getInstance() {
+		return dao;
+	}
+	
+	@Override
+	public Connection getConnect() throws SQLException {
+		Connection conn = DriverManager.getConnection(ServerInfo.URL,ServerInfo.USER,ServerInfo.PASS);
+		System.out.println("DB...Connection...is OK");
+		return conn;
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps) throws SQLException {
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException {
+		if(rs!=null) rs.close();
+		closeAll(conn, ps);
+	}
+	
+	private boolean ssnExist(String ssn, Connection conn) throws SQLException {
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT ssn FROM customer WHERE ssn=?"; // 존재 유무만 판별하기에 *이 아닌 ssn 하나만 부름
+		ps = conn.prepareStatement(query);
+		ps.setString(1, ssn);
+		rs = ps.executeQuery(); // 1개만 부르기 때문에 while 문 안씀.
+		return rs.next();
+	}
+	
+	@Override
+	public void registerCustomer(Customer vo) throws SQLException, DuplicateSSNException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try { 
+			conn = getConnect();
+			if(!ssnExist(vo.getSsn())) { //ssn이 없다면
+				
+			String query = "INSERT INTO customer(ssn, name, address)VALUES(?,?,?)";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, vo.getSsn());
+			ps.setString(2, vo.getName());
+			ps.setString(3, vo.getAddress());
+
+			System.out.println(ps.executeUpdate()+"row INSERT OK.");
+			}else { //ssn이 있다면
+				throw new DuplicateSSNException("이미 존재하는 고객입니다.");
+			}
+		}finally {
+			closeAll(conn,ps);
+		}
+	}
+
+	@Override
+	public void removeCustomer(String ssn) throws SQLException, RecordNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try { 
+			conn = getConnect();
+			
+			
+		}finally {
+			closeAll(conn,ps);
+		}
+	}
+
+	@Override
+	public void updateCustomer(Customer vo) throws SQLException, RecordNotFoundException {
+		
+	}
+
+	@Override
+	public Customer getCustomer(String ssn) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public ArrayList<Customer> getCustomer() throws SQLException {
+		return null;
+	}
+
+}

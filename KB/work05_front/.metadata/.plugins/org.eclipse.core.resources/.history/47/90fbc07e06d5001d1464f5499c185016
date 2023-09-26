@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Image 사용하기</title>
+		<style type="text/css">
+			div{
+				background: yellow;
+				
+			}
+			span {
+				background: gray;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<h1>영역을 구분하는 Tag :: div, span</h1>
+		<div>
+			div scope1
+		</div>
+			div scope2
+		<hr>
+		<span>
+			span scope1
+		</span>
+			span scope2
+		<hr>
+		<h1>이미지 넣기와 사이즈 지정 방법</h1>
+		<img alt="고흐이미지" src="./img/goho2.jpg">
+		<img alt="고흐이미지" src="./img/goho2.jpg" width="30%">
+	</body>
+</html>

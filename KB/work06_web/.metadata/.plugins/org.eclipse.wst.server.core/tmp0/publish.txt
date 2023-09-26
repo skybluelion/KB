@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Apr 24 13:04:45 KST 2023
+org.eclipse.jst.jee.server\:web17_JQueryUI_FactoryPattern=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\web17_JQueryUI_FactoryPattern
+org.eclipse.jst.jee.server\:ws04_BackEnd=C\:\\KB\\apache-tomcat-9.0.73\\webapps\\ws04_BackEnd

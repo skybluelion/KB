@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 반응형 웹-> 모바일 -->
+<title>Insert title here</title>
+<style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#send').click(function() {
+		$.ajax({
+			//요청
+			type: 'get',
+			url: 'http://localhost:8888/weather.xml',
+			dataType: 'xml',//응답시 전달되는 데이터의 타입
+			//응답
+			success:function(data){
+				var str ='';
+				$(data).find('list').each(function(index,item) {
+					var region=$(this).find('region').text();
+					var wind=$(this).find('wind').text();
+					var rain=$(this).find('rain').text();
+					var temp=$(this).find('temp').text();
+					
+					str +='<tr>';
+				});			
+			}//callback
+		});//ajax
+	});//click
+  });
+</script>
+</head>
+<body>
+	<div class="container">
+		<h2 align="center">==== OPEN API WEATHER 데이터 가져오기 ====</h2>
+		<p><a href="#" id="send">XML 데이터 서버로 요청하기</a></p>
+		<table>
+			<thead>
+				<tr>
+					<th>REGION</th>
+					<th>WIND</th>
+					<th>RAIN</th>
+					<th>TEMP</th>
+				</tr>
+			</thead>
+			<tbody>
+			<!-- 이 부분에 공공데이터를 집어 넣기 -->
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

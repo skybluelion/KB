@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 정의하는 방법 :: 1) 선언적 한수 선언 2) 익명 함수 선언</title>
+<script>
+// 선언적 함수 정의
+
+func();
+
+function func() {
+	alert("func A....");
+}
+
+function func() {
+	alert("func B....");
+}
+
+func();
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

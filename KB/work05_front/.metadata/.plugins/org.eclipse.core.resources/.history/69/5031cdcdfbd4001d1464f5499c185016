@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- 다양한 폼입력양식을 하나로 묶어주는 태그 -->
+		<h2>FORM TEST...</h2> <!-- blocking tag : 줄바꿈되는 태그 -->
+		<form action="#">
+		ID : <input type="text" name="id"> <br><br>
+		PASS : <input type="password" name="pass"><br><br>   <!-- Inline tag : 줄바뀜 안되는 태그 -->
+		<input type="file" name="file"><br><br>
+		TODAY : <input type="date" name="date"><br><br>
+		NUMBER : <input type="number" name="number"><br><br>
+		<hr>
+		Guest Memo : <br>
+		<textarea rows="5" cols="50">
+		intro...memo.
+		</textarea>
+		</form>
+	</body>
+</html>

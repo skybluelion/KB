@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#banner {
+	padding: 10px;
+	font-size: 30px;
+	color: crimson;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+<script>
+//html파일이 로딩되고 나서 이 부분이 동작하도록 한다..onload
+	var bannerIndex = 0;
+	var bannerList = ["JavaScript is the world's most popular programming language.",
+		"JavaScript is the programming language of the Web.",
+		"JavaScript is easy to learn.",
+		"This tutorial will teach you JavaScript from basic to advanced."
+		];
+	
+	onload = function() {
+		//1. 배너 광고
+		let bannerEle = document.querySelector('#banner');
+		bannerEle.innerHTML = bannerList[bannerIndex++];
+		
+		//특정한 시간을 간격으로 호출되는 함수
+		setInterval(function() {
+			bannerEle.innerHTML = bannerList[bannerIndex++];
+			if(bannerIndex==bannerList.length) bannerIndex=0;// 배열 순서를 다시 0으로 초기화
+		}, 2000); //  setInterval(함수, 밀리세컨드)
+		
+		
+		//2. 기사의 메인 섹션
+		document.querySelctorAll("p").forEach(function(item,index) {
+			item.onclick = function() { //각각의 p(기사) 영역을 클릭하면
+				//현재 이벤트가 발생하고 있는 영역(태그) 자기 자신 this
+				let key = this.closest('.column').attributes['main-item'].value; //가장 가까운 (태그)의 속성[]의 값
+				alert key;
+			}
+		});
+		
+	}
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Header</h1>
+  <p id = "banner">Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column" main-item="sports">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  
+  <div class="column" main-item="economics">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  
+  <div class="column" main-item="cultures">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+

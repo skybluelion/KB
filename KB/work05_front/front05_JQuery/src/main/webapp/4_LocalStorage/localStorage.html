@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 반응형 웹-> 모바일 -->
+<title>Insert title here</title>
+<style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#saveBtn').click(function() {
+		localStorage.setItem("key1","안녕"); //함수 이용 - Map 방식, string으로 저장됨. 가장 많이 이용
+		localStorage.key2 = "Hi";
+		localStorage["key3"] = "Hello";
+		
+	});
+    $('#delBtn').click(function() {
+    	localStorage.removeItem("key3");
+	});
+    $('#delAllBtn').click(function() {
+    	localStorage.clear();		
+	});
+    $('#showBtn').click(function() {
+    	localStorage.getItem("key1")+","+localStorage.getItem("key2")+","+localStorage.getItem("key3");
+	});
+  });
+</script>
+</head>
+<body>
+<button id="saveBtn">저장</button>
+<button id="delBtn">삭제</button>
+<button id="delAllBtn">전체삭제</button>
+<button id="showBtn">내용보기</button>
+</body>
+</html>

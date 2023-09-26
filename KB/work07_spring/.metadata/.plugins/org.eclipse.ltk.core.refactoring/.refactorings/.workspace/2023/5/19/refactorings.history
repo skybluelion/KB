@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;sp17_ipa_member&apos; to &apos;sp17_jpa_member&apos;" description="Rename resource &apos;sp17_ipa_member&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/sp17_ipa_member" name="sp17_jpa_member" stamp="1683505453419" updateReferences="true"/>
+</session>

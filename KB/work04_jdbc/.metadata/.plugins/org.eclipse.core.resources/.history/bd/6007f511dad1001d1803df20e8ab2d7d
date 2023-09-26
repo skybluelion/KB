@@ -1,0 +1,26 @@
+package com.jbdc.dao;
+//비지니스로직 :: 디비 Access하는 로직... sql이 동작
+
+public class CustomerDAO {
+	public CustomerDAO() {
+		System.out.println("DAO Creating...");
+	}
+	
+	//DML, SELECT SQL이 각각의 기능에서 작동하도록 비지니스로직을 정의
+	public void addCustomer() {
+		//INSERT INTO
+		
+	}
+	public void removeCustomer() {
+		//DELETE
+		
+	}
+	public void updateCustomer() {
+		//UPDATE SET
+		
+	}
+	
+	public void printAllCustomer() {
+		//SELECT
+	}
+}

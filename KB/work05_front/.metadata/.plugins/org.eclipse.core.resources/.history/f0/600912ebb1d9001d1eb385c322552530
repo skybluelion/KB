@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{ 
+		border-radius:10px; border:1px solid red;
+	}
+	#future{ border:1px solid green;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){ 
+		// onclick 장바구니 같이 삭제하고 넣고 할 때는 - 현재는 존재하지 않지만 나중에 생기는 경우
+		//1.
+		$('div').click(function(){
+			$('#future').append('<h2 id = kblife>KBStar... 연수진행과정</h2>')			
+		});
+		
+		//2. 미래에 존재하는 태그를 클릭하는 함수
+/* 		$('h2').on('click', function() {}); // 잘못됨. 원래 있었던 것에 선택자를 지정해야함. */
+ 		// #kblife부분을 클릭하면 onhell함수가 호출,,, 이 때 선택자는 반드시 기존에 있는 태그를 지정
+		$('#future').on('click', '#kblife', onhell);
+		
+	});//ready
+	
+	function onhell() {
+		alert("onhello calling")
+	}
+	
+    
+
+</script>
+</head>
+<body>
+	<div>
+		<h1>$('selector').on('click')</h1>
+		<p>on함수 기능 : 클릭함수와 동일해보이지만 미래에 존재하는 태그에 사용하는 함수</p>
+	</div>
+	<div id="future"></div>
+</body>
+</html>
+
+
+
