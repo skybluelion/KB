@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author student
- *
- */
-module BOJ {
-}
